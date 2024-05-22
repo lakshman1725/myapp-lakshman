@@ -3,20 +3,22 @@ import './App.css';
 import Counter from './store/counter';
 import Todos from './store/todolist';
 import Products from './store/products';
+import { connect } from 'react-redux';
 
 
 
-function App() {
+function App(props) {
+  console.log(props)
   return (
     <div className='border border-2 border-warning m-2 p-2'>
      
-     <h1>APP</h1> 
-     
+     <h1>Cart:{props.Productreducer.cart.length}</h1> 
+     <Products></Products>
      <Counter></Counter>
      <Todos></Todos>
-    <Products></Products>
+  
     </div>
   );
 }
 
-export default App;
+export default connect(store=>store) (App);
