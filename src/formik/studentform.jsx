@@ -1,7 +1,7 @@
-import { useFormik } from "formik";
+import { ErrorMessage, useFormik } from "formik";
 import React from "react";
 import * as Yup from 'yup';
-
+import axios from "axios";
 function Studentform(){
    var studentform= useFormik({
         initialValues:{
@@ -32,7 +32,20 @@ function Studentform(){
           })
           .required("*please fill the age"),
           email:Yup.string()
-          .required("*invalid email")
+          .required("*invalid email"),
+          username:Yup.string().test("uniqueusername","username already use",function(un)
+            {
+              var {path,createError}=this;
+              var pp=new Promise((resolve, reject) => {
+                axios.get(`https://api.github.com/users/${un}`).then(resp=>{
+                  reject(createError({path,message:"this name was already use"}))
+                  })
+                  .catch(err=>{resolve(true)})
+              })
+          return pp
+        })
+
+          
           }),
           
           
@@ -70,6 +83,13 @@ function Studentform(){
             <input type="text" placeholder="username"  {...studentform.getFieldProps("username")}/>
             <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;
             <button >show the data</button>
+            <button onClick={()=>{studentform.resetForm()}}>Reset</button>
+            <button onClick={()=>{studentform.setValues({firstname:"lakshman",
+            lastname:"kolapati",
+            password:"saI2345",
+            email:"kolapatilakshman@gmail.com",
+            age:"22",
+            username:"lakshman1725"})}}>Show values</button>
            </form>
            {JSON.stringify(studentform.errors)}
         </div>
