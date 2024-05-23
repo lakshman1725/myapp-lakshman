@@ -1,24 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
-import Counter from './store/counter';
-import Todos from './store/todolist';
-import Products from './store/products';
-import { connect } from 'react-redux';
 
+import { Link, Outlet, } from 'react-router-dom';
 
-
-function App(props) {
-  console.log(props)
-  return (
-    <div className='border border-2 border-warning m-2 p-2'>
-     
-     <h1>Cart:{props.Productreducer.cart.length}</h1> 
-     <Products></Products>
-     <Counter></Counter>
-     <Todos></Todos>
+function App() {
   
+  return (
+    <div>
+
+    <div className='border border-2 border-secondary m-2 p-2'>
+     
+     {/* <h1>Cart:{props.Productreducer.cart.length}</h1>  */}
+     <Link to="count">COUNTER</Link><br/>
+     <Link to="todos">TODOLIST</Link><br/>
+     <Link to="pro">PRODUCTS</Link><br/>
+     </div>
+      <Outlet></Outlet>
+      
     </div>
+    
   );
 }
 
-export default connect(store=>store) (App);
+export default App

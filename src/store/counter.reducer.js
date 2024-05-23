@@ -5,13 +5,13 @@ let initialState={
 }
 function  CounterReducer(state=initialState,action){
    
-   if(action.type==="INC"){
+   if(action.type==="INCREMENT"){
       return{count:state.count+1}
    }
-   if(action.type==="DEC"){
+   if(action.type==="DECREMENT"){
     return{count:state.count-1}
  }
- if(action.type==="RES"){
+ if(action.type==="RESET"){
     return{count:0}
  }
    
