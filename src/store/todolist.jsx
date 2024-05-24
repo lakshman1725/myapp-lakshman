@@ -1,6 +1,7 @@
 import { useState } from "react";
 import reducer from "./reducer";
 import { connect } from "react-redux";
+import { Addtocart } from "./actions";
 function Todos(props){
     console.log(props)
 return(
@@ -10,16 +11,21 @@ return(
                 
             </h1>
             <input type="text" id="nt" />&nbsp;&nbsp;
-            <button className="btn btn-success" onClick={()=>{props.dispatch({type:"addtodo",payload:document.getElementById("nt").value})}}>ADD TODOS</button>
+            <button className="btn btn-success" onClick={()=>{props.Addtodo(document.getElementById("nt").value)}}>ADD TODOS</button>
             <ul>
             {
-            props.todolistreducer.students.map((k)=>{return<li>{k}</li>})
+            props.students.map((k)=>{return<li>{k}</li>})
             }
             </ul>
-            
-           
-           
-        </div>
+            </div>
     )
 }
-export default connect(function(store){return(store)})(Todos)
+function MapStateaddtoprops(state){
+ return state.todolistreducer
+}
+function MapDispatchtoprops(dispatch){
+    return {
+        Addtodo:(nt)=>{dispatch({type:"addtodo",payload:nt})}
+    }
+}
+export default connect(MapStateaddtoprops, MapDispatchtoprops)(Todos)
