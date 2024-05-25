@@ -1,11 +1,11 @@
 let initialState={
 
     
-     students:["lakshman",
-    "babi",
-    "shiva",
+     students:["shiva",
+    "venkata lakshmi",
     "maha",
-    "venkata lakshmi"]
+    "babi",
+    "siri"]
 }
 function  TodolistReducer(state=initialState,action){
     
