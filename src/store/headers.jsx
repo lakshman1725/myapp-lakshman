@@ -12,16 +12,16 @@ function Header(){
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <Link class="nav-link active" aria-current="page" to="/products">Products</Link>
+          <Link class="nav-link active" aria-current="page" to="/pro">Products</Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" to="/">Features</Link>
+          <Link class="nav-link" to="/count">Counter</Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" to="products">Pricing</Link>
+          <Link class="nav-link" to="/todos">Todolist</Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <Link class="nav-link" to="/country">Countries</Link>
         </li>
       </ul>
     </div>

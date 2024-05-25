@@ -1,3 +1,4 @@
+import axios from "axios"
 export function Addtodo(students){
 
    return {type:"addtodo",payload:students}
@@ -15,3 +16,9 @@ export function Addtocart(product){
  export function Reset(){
     return{type:"RESET"}
  }
+export function Getallcountries(){
+  return (dispatch)=>{axios.get("https://restcountries.com/v3/all").then((res)=>{
+   return dispatch({type:"LOADCOUNTRIES",payload:res.data})
+}
+)}
+   }

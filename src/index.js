@@ -13,6 +13,7 @@ import {
 import Counter from './store/counter';
 import Todolist from './store/todolist';
 import Products from './store/products';
+import Countries from './store/countries';
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
     {
       path:"pro",
       element:<Products></Products>,
+     
+    },
+    {
+      path:"country",
+      element:<Countries></Countries>
      
     },
     ]

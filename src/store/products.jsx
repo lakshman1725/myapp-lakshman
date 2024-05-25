@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 function Products(props){
     console.log(props)
     return(
-        <div className=" border border-warning m-2 p-2" style={{height:"200px",overflow:"scroll"}}>
+        <div className=" border border-warning m-2 p-2">
             <h1>PRODUCTS:</h1>
            
       

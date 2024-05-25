@@ -3,23 +3,22 @@ import './App.css';
 
 import { Link, Outlet, } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Header from './store/headers';
 function App(props) {
   
   return (
     
 
-    <div className='border border-2 border-secondary m-2 p-2'>
+    <div className='border border-2 border-success m-2 p-2'>
     
-    <Link to="count">COUNTER</Link><br/>
-     <Link to="todos">TODOLIST</Link><br/>
-     <Link to="pro">PRODUCTS</Link><br/>
-     <h1>
-             Cart:{props.Productreducer.cart.length}
-      </h1> 
+    <div>
+      <Header></Header>
+
+    <Outlet></Outlet>
+    
+    </div>
       
-      
-     <Outlet></Outlet>
-     
+ 
      </div>
       
   
