@@ -14,6 +14,7 @@ import Pawankalyan from './react router dom/pawankalyan';
 import Blackcurrent from './react router dom/black current';
 import Countries from './react router dom/restcountries';
 import CountryDetails from './react router dom/countryDetails';
+import Test from './react router dom/Test';
   const router = createBrowserRouter([
     {
       path: "/",
@@ -38,13 +39,18 @@ import CountryDetails from './react router dom/countryDetails';
         {
           path:"/countries",
           element:<Countries></Countries>,
-         
+             children:[
+              {
+              path:"countryDetails/:cname",
+              element:<CountryDetails></CountryDetails>  
+             
+             }
+        ]
+          
       },
-      {
-        path:"/countrydetails/:cname",
-        element:<CountryDetails></CountryDetails>
-       
-    },
+      
+     
+      
        ]
     }
    ]);
