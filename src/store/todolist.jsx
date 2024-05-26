@@ -1,13 +1,13 @@
-import { useState } from "react";
+import React from "react";
 import reducer from "./reducer";
 import { connect } from "react-redux";
-import { Addtocart } from "./actions";
+
 function Todos(props){
     console.log(props)
 return(
         <div className="border border-warning">
-            <h1>
-                TODOLIST
+            <h1 className="text-danger">
+                EDUPOLY STUDENTS:
                 
             </h1>
             <input type="text" id="nt" />&nbsp;&nbsp;
