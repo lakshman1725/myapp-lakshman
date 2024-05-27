@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const intialstate={
     count:0
 }
-export const counterSlice=createSlice({
+ const counterSlice=createSlice({
     name:"counter",
     intialstate,
     reducers:{
@@ -18,4 +18,6 @@ export const counterSlice=createSlice({
     }
 })
 export var{inc,dec,reset}=counterSlice.actions
-export default counterSlice.reducer
+const counterReducer =  counterSlice.reducer
+// console.log(counterReducer);
+export default counterReducer

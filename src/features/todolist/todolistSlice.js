@@ -7,7 +7,9 @@ var todoSlice=createSlice({
     initialstate,
     reducers:{
         addTodo:(state,action)=>{
-            
+           state.todos.push(action.payload) 
         }
     }
 })
+var {addTodo}=todoSlice.actions
+export default todoSlice.reducer
