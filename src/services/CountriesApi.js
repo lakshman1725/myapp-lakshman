@@ -6,7 +6,7 @@ export const countriesApi = createApi({
   reducerPath: 'countriesApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://restcountries.com/v3' }),
   endpoints: (builder) => ({
-    getAllcountries: builder.query({
+    getAllCountries: builder.query({
       query: () => `/all`,
     }),
   }),
@@ -14,4 +14,4 @@ export const countriesApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetAllcountriesQuery } = countriesApi
+export const { useGetAllCountriesQuery } = countriesApi

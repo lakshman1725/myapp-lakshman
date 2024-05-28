@@ -1,8 +1,8 @@
 import React from "react";
-import { useGetAllcountriesQuery } from "../../services/CountriesApi";
+import { useGetAllCountriesQuery } from "../../services/CountriesApi";
 function Countries(){
-    var{isloading,data}=useGetAllcountriesQuery()   
-    console.log("isloading ::",isloading);
+    var{isLoading,data}=useGetAllCountriesQuery()   
+    console.log("isloading ::",isLoading);
     console.log("data::",data)
 return(
         <div>
