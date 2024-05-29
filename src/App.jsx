@@ -8,13 +8,13 @@ import Products from './features/products/products';
 function App() {
   return (
    <div>
-    <h1 className='text-primary'>
+    <h1 className='classname'>
       REACT-TOOL-KIT
       <div>
       {/* <Counter></Counter>
       <Todolist></Todolist> */}
-      <Countries></Countries>
-      {/* <Products></Products> */}
+      {/* <Countries></Countries> */}
+      <Products></Products>
       </div>
       
     </h1>
