@@ -9,7 +9,16 @@ export const productsApi = createApi({
     getAllProducts: builder.query({
       query: () => `/`,
     }),
-  }),
+    addPost: builder.mutation({
+      query:(newpost)=>{
+        return {
+          url: `/`,
+          method: 'POST',
+          body:newpost,
+        }
+      },
+    }),
+  })
 })
 
 // Export hooks for usage in functional components, which are
